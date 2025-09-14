@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
@@ -72,6 +73,16 @@ header nav ul li a.active {
     max-width: 300px;
 }
 
+/* Animasi */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.intro, .project, .bio, .table-section {
+    animation: fadeIn 1s ease-out;
+}
+
 /* Section umum */
 .intro, .project, .bio {
     text-align: center;
@@ -128,6 +139,7 @@ footer {
 
 .btn:hover {
     background-color: #3E4F68;
+    transform: scale(1.1);
 }
 
 /* Layout 2 kolom (About) */
@@ -148,19 +160,8 @@ footer {
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
-    }
-
-    .project-img {
-        width: 100%;
-    }
-
-    table {
-        width: 90%;
-    }
-
-    .about-container {
-        flex-direction: column;
-        text-align: center;
+        opacity: 0;
+        animation: slideInLeft 0.5s ease-out forwards;
     }
 }
 
@@ -199,49 +200,4 @@ footer {
 
 .social-icon i {
     font-size: 50px;
-}
-
-/* Styling untuk teks Hubungi Saya */
-.contact-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    font-size: 30px;
-    font-weight: bold;
-    margin-top: 50px;
-}
-
-/* Form Kontak */
-.contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.contact-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contact-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-}
-
-.contact-form button {
-    width: 100%;
 }
